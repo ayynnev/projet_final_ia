@@ -334,3 +334,75 @@ button, select{ font-family: inherit; border:none; background:none; cursor:point
 @media (max-width: 560px){
   .footer-inner{ flex-direction:column; }
 }
+
+/* =========================================================
+   JO PARIS 2024 — Design tokens & Architecture CSS
+   ========================================================= */
+:root{
+  --navy-deep: #0B1730;
+  --navy-mid:  #142B52;
+  --navy-soft: #1C3A66;
+  --cream:     #F6F2E9;
+  --cream-dim: #ECE6D8;
+  --white:     #FFFFFF;
+  --ink:       #0B1730;
+
+  --gold:  #F4B41A;
+  --pink:  #E63E6D;
+  --green: #1F8A5F;
+  --red-alert: #C73E3E;
+
+  --font-display: 'Anton', sans-serif;
+  --font-body: 'Work Sans', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --header-h: 76px;
+  --container: 1180px;
+  --ease: cubic-bezier(.22,.61,.36,1);
+}
+
+/* =========================================================
+   Reset & Paramètres Globaux
+   ========================================================= */
+*,*::before,*::after{ box-sizing: border-box; }
+html{ scroll-behavior: smooth; scroll-padding-top: var(--header-h); }
+body{
+  margin:0;
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--cream);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+h1,h2,h3,h4,h5,p,ul,blockquote{ margin:0; }
+ul{ padding:0; list-style:none; }
+a{ color:inherit; text-decoration:none; }
+img,svg{ display:block; max-width:100%; height:auto; }
+button, select{ font-family: inherit; border:none; background:none; cursor:pointer; color: inherit; }
+
+.skip-link{
+  position:absolute; left:-999px; top:0;
+  background:var(--gold); color:var(--navy-deep); padding:.6rem 1rem; z-index:200;
+}
+.skip-link:focus{ left:1rem; top:1rem; }
+
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior:auto; }
+  *{ animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; }
+}
+
+/* =========================================================
+   ⚡ ANIMATION D'ENTRÉE : LAUNCH OVERLAY (ANNEAUX OLYMPIQUES)
+   ========================================================= */
+.intro-loader {
+  position: fixed;
+  inset: 0;
+  background: var(--navy-deep);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  pointer-events: none;
+  animation: fadeOutLoader 0.8s cubic-bezier(0.77, 0, 0.175, 1) 2.2
