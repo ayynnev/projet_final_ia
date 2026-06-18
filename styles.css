@@ -345,3 +345,129 @@ button{ font-family: inherit; border:none; background:none; cursor:pointer; }
 @media (max-width: 560px){
   .footer-inner{ flex-direction:column; }
 }
+
+/* =========================================================
+   COMPOSANTS ÉPURÉS ET IMAGES (Optimisation UI)
+   ========================================================= */
+
+/* Espacements globaux plus légers et aérés */
+.project-section {
+  padding: 8rem 0 8.5rem; /* Donne plus d'air entre les sections */
+}
+
+.section-title {
+  letter-spacing: -0.02em;
+  margin-bottom: 1.5rem;
+}
+
+.section-lede {
+  font-weight: 400;
+  opacity: 0.85;
+}
+
+/* La nouvelle carte moderne de prévisualisation */
+.preview-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.04);
+  transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease), border-color 0.4s var(--ease);
+}
+
+/* Ajustements spécifiques pour les sections à fond clair */
+.section--performances .preview-card,
+.section--innovations .preview-card {
+  background: var(--white);
+  border: 1px solid rgba(11, 23, 48, 0.08);
+}
+
+/* Effet de survol sur la carte */
+.preview-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+}
+
+.section--ecosysteme .preview-card:hover { border-color: rgba(244,180,26,.4); }
+.section--performances .preview-card:hover { border-color: rgba(31,138,95,.4); }
+.section--heritage .preview-card:hover { border-color: rgba(230,62,109,.4); }
+.section--innovations .preview-card:hover { border-color: rgba(11,23,48,.2); }
+
+/* Gestion de l'image */
+.preview-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+  background: var(--navy-deep);
+}
+
+.preview-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(20%) contrast(105%);
+  transition: transform 0.6s var(--ease), filter 0.6s var(--ease);
+}
+
+/* Zoom de l'image quand on survole la carte */
+.preview-card:hover .preview-img {
+  transform: scale(1.05);
+  filter: grayscale(0%) contrast(100%);
+}
+
+/* Badge de catégorie sur l'image */
+.preview-tag {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.4rem 0.8rem;
+  border-radius: 30px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Couleurs des badges selon la section */
+.section--ecosysteme .preview-tag { background: rgba(11, 23, 48, 0.75); color: var(--gold); }
+.section--performances .preview-tag { background: rgba(246, 242, 239, 0.85); color: var(--green); }
+.section--heritage .preview-tag { background: rgba(11, 23, 48, 0.75); color: var(--pink); }
+.section--innovations .preview-tag { background: rgba(11, 23, 48, 0.85); color: var(--gold); }
+
+/* Texte à l'intérieur de la carte */
+.preview-content {
+  padding: 2rem;
+}
+
+.preview-content h3 {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.01em;
+}
+
+.section--ecosysteme .preview-content h3,
+.section--heritage .preview-content h3 {
+  color: var(--white);
+}
+
+.section--performances .preview-content h3,
+.section--innovations .preview-content h3 {
+  color: var(--navy-deep);
+}
+
+.preview-content p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  opacity: 0.8;
+}
+
+.section--performances .preview-content p,
+.section--innovations .preview-content p {
+  color: var(--navy-mid);
+}
