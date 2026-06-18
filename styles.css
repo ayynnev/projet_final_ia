@@ -224,7 +224,7 @@ button{ font-family: inherit; border:none; background:none; cursor:pointer; }
    ========================================================= */
 .project-section{
   position:relative;
-  padding: 6.5rem 0 7rem;
+  padding: 8rem 0 8.5rem;
   scroll-margin-top: var(--header-h);
 }
 .section-stripe{
@@ -242,21 +242,10 @@ button{ font-family: inherit; border:none; background:none; cursor:pointer; }
 .section-title{
   font-family: var(--font-display);
   font-size: clamp(2.1rem, 4.4vw, 3.3rem);
-  line-height:1; letter-spacing:.01em;
+  line-height:1; letter-spacing:-0.02em;
+  margin-bottom: 1.5rem;
 }
-.section-lede{ margin-top:1.25rem; font-size:1.05rem; line-height:1.6; max-width:34ch; }
-
-.placeholder-block{
-  border: 1px dashed currentColor; opacity:.85;
-  border-radius: 14px; padding: 2.25rem 1.75rem;
-  display:flex; flex-direction:column; gap:.85rem; align-items:flex-start;
-  min-height: 220px; justify-content:center;
-}
-.placeholder-tag{
-  font-family: var(--font-mono); font-size:.7rem; letter-spacing:.08em; text-transform:uppercase;
-  padding:.3rem .65rem; border-radius:999px; background: rgba(0,0,0,.08);
-}
-.placeholder-block p{ font-size:.95rem; line-height:1.55; max-width:32ch; }
+.section-lede{ margin-top:1.25rem; font-size:1.05rem; line-height:1.6; max-width:34ch; font-weight: 400; opacity: 0.85; }
 
 /* reveal-on-scroll */
 .reveal{ opacity:0; transform: translateY(22px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
@@ -268,7 +257,70 @@ button{ font-family: inherit; border:none; background:none; cursor:pointer; }
 }
 
 /* =========================================================
-   Section 01 — Écosystème (dark / gold / réseau de nœuds)
+   COMPOSANTS DES PREVIEW CARDS (Visuels)
+   ========================================================= */
+.preview-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.04);
+  transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease), border-color 0.4s var(--ease);
+}
+
+.preview-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+}
+
+.preview-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+  background: var(--navy-deep);
+}
+
+.preview-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(20%) contrast(105%);
+  transition: transform 0.6s var(--ease), filter 0.6s var(--ease);
+}
+
+.preview-card:hover .preview-img {
+  transform: scale(1.05);
+  filter: grayscale(0%) contrast(100%);
+}
+
+.preview-tag {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.4rem 0.8rem;
+  border-radius: 30px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.preview-content { padding: 2rem; }
+.preview-content h3 {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.01em;
+}
+.preview-content p { font-size: 0.95rem; line-height: 1.6; opacity: 0.8; }
+
+/* =========================================================
+   Section 01 — Écosystème (dark / gold / réseau)
    ========================================================= */
 .section--ecosysteme{
   background: var(--navy-deep); color: var(--cream);
@@ -279,11 +331,12 @@ button{ font-family: inherit; border:none; background:none; cursor:pointer; }
     radial-gradient(2px 2px at 80% 60%, rgba(244,180,26,.4) 0, transparent 60%);
 }
 .section--ecosysteme .section-eyebrow{ color: var(--gold); }
-.section--ecosysteme .placeholder-block{ color: rgba(246,242,233,.85); border-color: rgba(244,180,26,.45); }
-.section--ecosysteme .placeholder-tag{ background: rgba(244,180,26,.16); color: var(--gold); }
+.section--ecosysteme .preview-card:hover { border-color: rgba(244,180,26,.4); }
+.section--ecosysteme .preview-tag { background: rgba(11, 23, 48, 0.75); color: var(--gold); }
+.section--ecosysteme .preview-content h3 { color: var(--white); }
 
 /* =========================================================
-   Section 02 — Performances (clair / green / feuille de données)
+   Section 02 — Performances (clair / green / grille)
    ========================================================= */
 .section--performances{
   background: var(--cream);
@@ -292,22 +345,26 @@ button{ font-family: inherit; border:none; background:none; cursor:pointer; }
   background-size: 36px 36px;
 }
 .section--performances .section-eyebrow{ color: var(--green); }
-.section--performances .placeholder-block{ color: var(--navy-deep); border-color: rgba(31,138,95,.5); }
-.section--performances .placeholder-tag{ background: rgba(31,138,95,.14); color: var(--green); }
+.section--performances .preview-card { background: var(--white); border: 1px solid rgba(11, 23, 48, 0.08); }
+.section--performances .preview-card:hover { border-color: rgba(31,138,95,.4); }
+.section--performances .preview-tag { background: rgba(246, 242, 239, 0.85); color: var(--green); }
+.section--performances .preview-content h3 { color: var(--navy-deep); }
+.section--performances .preview-content p { color: var(--navy-mid); }
 
 /* =========================================================
-   Section 03 — Héritage (dark mid / pink / lueur cinématique)
+   Section 03 — Héritage (dark mid / pink / lueur)
    ========================================================= */
 .section--heritage{
   background: radial-gradient(circle at 80% 30%, rgba(230,62,109,.18), transparent 55%), var(--navy-mid);
   color: var(--cream);
 }
 .section--heritage .section-eyebrow{ color: var(--pink); }
-.section--heritage .placeholder-block{ color: rgba(246,242,233,.85); border-color: rgba(230,62,109,.5); }
-.section--heritage .placeholder-tag{ background: rgba(230,62,109,.18); color: var(--pink); }
+.section--heritage .preview-card:hover { border-color: rgba(230,62,109,.4); }
+.section--heritage .preview-tag { background: rgba(11, 23, 48, 0.75); color: var(--pink); }
+.section--heritage .preview-content h3 { color: var(--white); }
 
 /* =========================================================
-   Section 04 — Innovations (clair / gold+pink / grille circuit)
+   Section 04 — Innovations (clair / grille circuit)
    ========================================================= */
 .section--innovations{
   background: var(--cream-dim);
@@ -319,8 +376,11 @@ button{ font-family: inherit; border:none; background:none; cursor:pointer; }
 }
 .section--innovations .section-eyebrow{ color: var(--pink); }
 .section--innovations .section-title{ color: var(--navy-deep); }
-.section--innovations .placeholder-block{ color: var(--navy-deep); border-color: rgba(11,23,48,.35); }
-.section--innovations .placeholder-tag{ background: rgba(244,180,26,.22); color: #8a5d05; }
+.section--innovations .preview-card { background: var(--white); border: 1px solid rgba(11, 23, 48, 0.08); }
+.section--innovations .preview-card:hover { border-color: rgba(11, 23, 48, 0.2); }
+.section--innovations .preview-tag { background: rgba(11, 23, 48, 0.85); color: var(--gold); }
+.section--innovations .preview-content h3 { color: var(--navy-deep); }
+.section--innovations .preview-content p { color: var(--navy-mid); }
 
 /* =========================================================
    Footer
@@ -344,130 +404,4 @@ button{ font-family: inherit; border:none; background:none; cursor:pointer; }
 
 @media (max-width: 560px){
   .footer-inner{ flex-direction:column; }
-}
-
-/* =========================================================
-   COMPOSANTS ÉPURÉS ET IMAGES (Optimisation UI)
-   ========================================================= */
-
-/* Espacements globaux plus légers et aérés */
-.project-section {
-  padding: 8rem 0 8.5rem; /* Donne plus d'air entre les sections */
-}
-
-.section-title {
-  letter-spacing: -0.02em;
-  margin-bottom: 1.5rem;
-}
-
-.section-lede {
-  font-weight: 400;
-  opacity: 0.85;
-}
-
-/* La nouvelle carte moderne de prévisualisation */
-.preview-card {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.04);
-  transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease), border-color 0.4s var(--ease);
-}
-
-/* Ajustements spécifiques pour les sections à fond clair */
-.section--performances .preview-card,
-.section--innovations .preview-card {
-  background: var(--white);
-  border: 1px solid rgba(11, 23, 48, 0.08);
-}
-
-/* Effet de survol sur la carte */
-.preview-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
-}
-
-.section--ecosysteme .preview-card:hover { border-color: rgba(244,180,26,.4); }
-.section--performances .preview-card:hover { border-color: rgba(31,138,95,.4); }
-.section--heritage .preview-card:hover { border-color: rgba(230,62,109,.4); }
-.section--innovations .preview-card:hover { border-color: rgba(11,23,48,.2); }
-
-/* Gestion de l'image */
-.preview-image-wrapper {
-  position: relative;
-  width: 100%;
-  height: 240px;
-  overflow: hidden;
-  background: var(--navy-deep);
-}
-
-.preview-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: grayscale(20%) contrast(105%);
-  transition: transform 0.6s var(--ease), filter 0.6s var(--ease);
-}
-
-/* Zoom de l'image quand on survole la carte */
-.preview-card:hover .preview-img {
-  transform: scale(1.05);
-  filter: grayscale(0%) contrast(100%);
-}
-
-/* Badge de catégorie sur l'image */
-.preview-tag {
-  position: absolute;
-  top: 1.25rem;
-  right: 1.25rem;
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  padding: 0.4rem 0.8rem;
-  border-radius: 30px;
-  backdrop-filter: blur(8px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
-
-/* Couleurs des badges selon la section */
-.section--ecosysteme .preview-tag { background: rgba(11, 23, 48, 0.75); color: var(--gold); }
-.section--performances .preview-tag { background: rgba(246, 242, 239, 0.85); color: var(--green); }
-.section--heritage .preview-tag { background: rgba(11, 23, 48, 0.75); color: var(--pink); }
-.section--innovations .preview-tag { background: rgba(11, 23, 48, 0.85); color: var(--gold); }
-
-/* Texte à l'intérieur de la carte */
-.preview-content {
-  padding: 2rem;
-}
-
-.preview-content h3 {
-  font-family: var(--font-body);
-  font-weight: 700;
-  font-size: 1.2rem;
-  margin-bottom: 0.75rem;
-  letter-spacing: -0.01em;
-}
-
-.section--ecosysteme .preview-content h3,
-.section--heritage .preview-content h3 {
-  color: var(--white);
-}
-
-.section--performances .preview-content h3,
-.section--innovations .preview-content h3 {
-  color: var(--navy-deep);
-}
-
-.preview-content p {
-  font-size: 0.95rem;
-  line-height: 1.6;
-  opacity: 0.8;
-}
-
-.section--performances .preview-content p,
-.section--innovations .preview-content p {
-  color: var(--navy-mid);
 }
