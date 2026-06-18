@@ -1,1 +1,180 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JO Paris 2024 — Projet Vibe Coding</title>
+<meta name="description" content="Projet étudiant : transposition de l'écosystème des Jeux Olympiques Paris 2024 en webapp interactive.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=JetBrains+Mono:wght@400;500;600&family=Work+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
 
+<a class="skip-link" href="#main-content">Aller au contenu</a>
+
+<!-- ============ HEADER / NAVIGATION ============ -->
+<header class="site-header" id="site-header">
+  <div class="header-inner">
+    <a href="#hero" class="logo" aria-label="Retour en haut">
+      <span class="logo-mark">24</span>
+      <span class="logo-text">JO PARIS<span class="logo-year">2024</span></span>
+    </a>
+
+    <nav class="main-nav" id="main-nav" aria-label="Navigation principale">
+      <a href="#ecosysteme" class="nav-link" data-section="ecosysteme"><span class="nav-index">01</span>Écosystème</a>
+      <a href="#performances" class="nav-link" data-section="performances"><span class="nav-index">02</span>Performances</a>
+      <a href="#heritage" class="nav-link" data-section="heritage"><span class="nav-index">03</span>Héritage</a>
+      <a href="#innovations" class="nav-link" data-section="innovations"><span class="nav-index">04</span>Innovations</a>
+    </nav>
+
+    <button class="nav-toggle" id="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="main-nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="progress-rail" aria-hidden="true"><span id="progress-fill"></span></div>
+</header>
+
+<main id="main-content">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="hero">
+    <div class="hero-track" aria-hidden="true">
+      <svg viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid slice" class="hero-svg">
+        <defs>
+          <linearGradient id="laneGold" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#F4B41A" stop-opacity="0"/>
+            <stop offset="50%" stop-color="#F4B41A" stop-opacity="0.9"/>
+            <stop offset="100%" stop-color="#F4B41A" stop-opacity="0"/>
+          </linearGradient>
+          <linearGradient id="lanePink" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#E63E6D" stop-opacity="0"/>
+            <stop offset="50%" stop-color="#E63E6D" stop-opacity="0.85"/>
+            <stop offset="100%" stop-color="#E63E6D" stop-opacity="0"/>
+          </linearGradient>
+          <linearGradient id="laneGreen" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#1F8A5F" stop-opacity="0"/>
+            <stop offset="50%" stop-color="#1F8A5F" stop-opacity="0.85"/>
+            <stop offset="100%" stop-color="#1F8A5F" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+        <path class="lane lane-1" d="M -100 560 C 250 460, 600 620, 1300 380" stroke="url(#laneGold)" stroke-width="3" fill="none"/>
+        <path class="lane lane-2" d="M -100 480 C 280 380, 650 540, 1300 300" stroke="url(#lanePink)" stroke-width="2" fill="none"/>
+        <path class="lane lane-3" d="M -100 400 C 300 300, 700 460, 1300 220" stroke="url(#laneGreen)" stroke-width="2" fill="none"/>
+        <circle class="pulse-dot" cx="180" cy="520" r="5" fill="#F4B41A"/>
+      </svg>
+    </div>
+
+    <div class="hero-inner">
+      <p class="hero-eyebrow">Projet supervisé B2 — Vibe Coding</p>
+      <h1 class="hero-title">L'écosystème<br>des Jeux<br><span class="hero-title-accent">racontée en 4 temps</span></h1>
+      <p class="hero-subtitle">Une webapp étudiante qui transpose quatre travaux d'analyse — écosystème, performances, héritage et innovations — autour de Paris&nbsp;2024 en une expérience interactive, du brief au scroll.</p>
+      <div class="hero-actions">
+        <a href="#ecosysteme" class="btn btn-primary">Explorer le projet</a>
+        <a href="#footer" class="btn btn-ghost">Voir l'équipe</a>
+      </div>
+    </div>
+
+    <a href="#ecosysteme" class="scroll-cue" aria-label="Défiler vers la première section">
+      <span class="scroll-cue-line"></span>
+      Scroll
+    </a>
+  </section>
+
+  <!-- ============ SECTION 01 — ÉCOSYSTÈME ============ -->
+  <section class="project-section section--ecosysteme" id="ecosysteme">
+    <span class="section-stripe" aria-hidden="true"></span>
+    <div class="section-inner">
+      <div class="section-head reveal">
+        <span class="section-eyebrow">01 — Cartographie</span>
+        <h2 class="section-title">Écosystème<br>des JO</h2>
+        <p class="section-lede">Infographie interactive de l'écosystème Paris 2024&nbsp;: acteurs, flux et organisation du projet olympique.</p>
+      </div>
+      <div class="section-body reveal">
+        <div class="placeholder-block">
+          <span class="placeholder-tag">À venir</span>
+          <p>Cartes, schémas et organigramme interactifs — contenu de la section ajouté à l'étape suivante.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SECTION 02 — PERFORMANCES ============ -->
+  <section class="project-section section--performances" id="performances">
+    <span class="section-stripe" aria-hidden="true"></span>
+    <div class="section-inner">
+      <div class="section-head reveal">
+        <span class="section-eyebrow">02 — Données</span>
+        <h2 class="section-title">Dashboard<br>Performances</h2>
+        <p class="section-lede">Analyse des performances d'un·e athlète olympique sous forme de tableau de bord filtrable.</p>
+      </div>
+      <div class="section-body reveal">
+        <div class="placeholder-block">
+          <span class="placeholder-tag">À venir</span>
+          <p>Graphiques interactifs, filtres par épreuve / compétition / période — contenu ajouté à l'étape suivante.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SECTION 03 — HÉRITAGE ============ -->
+  <section class="project-section section--heritage" id="heritage">
+    <span class="section-stripe" aria-hidden="true"></span>
+    <div class="section-inner">
+      <div class="section-head reveal">
+        <span class="section-eyebrow">03 — Récit</span>
+        <h2 class="section-title">Héritage<br>Olympique</h2>
+        <p class="section-lede">L'héritage des Jeux vu par un·e habitant·e — récit immersif en scrollytelling.</p>
+      </div>
+      <div class="section-body reveal">
+        <div class="placeholder-block">
+          <span class="placeholder-tag">À venir</span>
+          <p>Page narrative au scroll, cartes du territoire, avant/après, citations — contenu ajouté à l'étape suivante.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SECTION 04 — INNOVATIONS ============ -->
+  <section class="project-section section--innovations" id="innovations">
+    <span class="section-stripe" aria-hidden="true"></span>
+    <div class="section-inner">
+      <div class="section-head reveal">
+        <span class="section-eyebrow">04 — Technologie</span>
+        <h2 class="section-title">Innovations<br>Technologiques</h2>
+        <p class="section-lede">Le rapport sur les innovations technologiques des JO, transformé en page interactive et filtrable.</p>
+      </div>
+      <div class="section-body reveal">
+        <div class="placeholder-block">
+          <span class="placeholder-tag">À venir</span>
+          <p>Catégories filtrables, jauges et graphique radar d'impact — contenu ajouté à l'étape suivante.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer" id="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="logo-mark logo-mark--footer">24</span>
+      <p>Projet supervisé B2 — Vibe Coding x JO Paris 2024<br>Réalisé avec un assistant IA, du prompt au déploiement.</p>
+    </div>
+    <div class="footer-team">
+      <span class="footer-team-label">Équipe projet</span>
+      <ul class="footer-team-list">
+        <li>Membre du groupe 1</li>
+        <li>Membre du groupe 2</li>
+        <li>Membre du groupe 3</li>
+        <li>Membre du groupe 4</li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
