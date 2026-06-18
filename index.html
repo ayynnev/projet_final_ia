@@ -8,14 +8,13 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=JetBrains+Mono:wght@400;500;600&family=Work+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<!-- Vérifie bien que ton fichier CSS s'appelle exactement styles.css avec un "s" -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <a class="skip-link" href="#main-content">Aller au contenu</a>
 
-<!-- ============ HEADER / NAVIGATION ============ -->
 <header class="site-header" id="site-header">
   <div class="header-inner">
     <a href="#hero" class="logo" aria-label="Retour en haut">
@@ -39,7 +38,6 @@
 
 <main id="main-content">
 
-  <!-- ============ HERO ============ -->
   <section class="hero" id="hero">
     <div class="hero-track" aria-hidden="true">
       <svg viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid slice" class="hero-svg">
@@ -83,96 +81,317 @@
     </a>
   </section>
 
-  <!-- ============ SECTION 01 — ÉCOSYSTÈME ============ -->
   <section class="project-section section--ecosysteme" id="ecosysteme">
     <span class="section-stripe" aria-hidden="true"></span>
-    <div class="section-inner">
+    <div class="section-inner full-width-layout">
       <div class="section-head reveal">
         <span class="section-eyebrow">01 — Cartographie</span>
-        <h2 class="section-title">Écosystème<br>des JO</h2>
-        <p class="section-lede">Infographie interactive de l'écosystème Paris 2024&nbsp;: acteurs, flux et organisation du projet olympique.</p>
+        <h2 class="section-title">Écosystème des Jeux Olympiques Paris 2024</h2>
+        <p class="section-lede">L'organisation des JO repose sur un réseau d'acteurs interconnectés qui soutiennent de concert l'un des plus grands événements mondiaux.</p>
       </div>
       <div class="section-body reveal">
-        <div class="preview-card">
-          <div class="preview-image-wrapper">
-            <img src="https://images.unsplash.com/photo-1508847154043-be12a62861c1?auto=format&fit=crop&w=800&q=80" alt="Réseau de connexions abstraites lumineux" class="preview-img">
-            <span class="preview-tag">Module Interactif</span>
+        <div class="eco-grid">
+          
+          <div class="eco-card" tabindex="0">
+            <div class="eco-card-inner">
+              <div class="eco-card-front pilier-1">
+                <div class="eco-icon">🌱</div>
+                <h3>Héritage</h3>
+                <span class="eco-sub">Impact durable & social</span>
+              </div>
+              <div class="eco-card-back">
+                <p>Favorise l'inclusion et la pratique sportive locale. Assure la reconversion pérenne des sites neufs construits au sein de l'espace public.</p>
+              </div>
+            </div>
           </div>
-          <div class="preview-content">
-            <h3>Cartes, schémas et organigramme</h3>
-            <p>Visualisation dynamique des interactions entre le COJO, le CIO et les collectivités publiques pour comprendre les coulisses logistiques des Jeux.</p>
+
+          <div class="eco-card" tabindex="0">
+            <div class="eco-card-inner">
+              <div class="eco-card-front pilier-2">
+                <div class="eco-icon">🚇</div>
+                <h3>Logistique</h3>
+                <span class="eco-sub">Mobilité & infra</span>
+              </div>
+              <div class="eco-card-back">
+                <p>Planifie les flux complexes de millions de voyageurs. Déploie l'accessibilité PMR et connecte le tissu urbain des transports franciliens.</p>
+              </div>
+            </div>
           </div>
+
+          <div class="eco-card" tabindex="0">
+            <div class="eco-card-inner">
+              <div class="eco-card-front pilier-3">
+                <div class="eco-icon">🌍</div>
+                <h3>Durabilité</h3>
+                <span class="eco-sub">Émissions carbone</span>
+              </div>
+              <div class="eco-card-back">
+                <p>Réduit de moitié l'empreinte environnementale globale. Priorise l'économie circulaire, le circuit court et les énergies de sources renouvelables.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="eco-card" tabindex="0">
+            <div class="eco-card-inner">
+              <div class="eco-card-front pilier-4">
+                <div class="eco-icon">📜</div>
+                <h3>Conformité</h3>
+                <span class="eco-sub">Charte Olympique</span>
+              </div>
+              <div class="eco-card-back">
+                <p>Garantit la stricte application des principes fondamentaux édictés par le CIO, protégeant l'esprit sportif, l'équité et l'éthique globale.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="eco-card" tabindex="0">
+            <div class="eco-card-inner">
+              <div class="eco-card-front pilier-5">
+                <div class="eco-icon">🏢</div>
+                <h3>Gouvernance</h3>
+                <span class="eco-sub">Rôles institutionnels</span>
+              </div>
+              <div class="eco-card-back">
+                <p>Coordonne l'action unifiée de l'État, de la SOLIDEO, du COJO et des collectivités territoriales pour optimiser chaque prise de décision.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="eco-card" tabindex="0">
+            <div class="eco-card-inner">
+              <div class="eco-card-front pilier-6">
+                <div class="eco-icon">💰</div>
+                <h3>Budget</h3>
+                <span class="eco-sub">Financement & transparence</span>
+              </div>
+              <div class="eco-card-back">
+                <p>Équilibre rigoureusement les fonds privés de billetterie, de sponsoring et les subventions pour écarter tout risque de dérive budgétaire.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="eco-card" tabindex="0">
+            <div class="eco-card-inner">
+              <div class="eco-card-front pilier-7">
+                <div class="eco-icon">⚖️</div>
+                <h3>Conformité légale</h3>
+                <span class="eco-sub">Cadre juridique</span>
+              </div>
+              <div class="eco-card-back">
+                <p>Encadre la passation transparente des marchés publics, les droits TV et le respect méticuleux de la législation spécifique liée aux Jeux.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="eco-card" tabindex="0">
+            <div class="eco-card-inner">
+              <div class="eco-card-front pilier-8">
+                <div class="eco-icon">🏛️</div>
+                <h3>Gouvernance</h3>
+                <span class="eco-sub">Supervision institutions</span>
+              </div>
+              <div class="eco-card-back">
+                <p>Assure un suivi démocratique direct par les hautes instances de contrôle et maintient une communication saine envers la société civile.</p>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ SECTION 02 — PERFORMANCES ============ -->
   <section class="project-section section--performances" id="performances">
     <span class="section-stripe" aria-hidden="true"></span>
-    <div class="section-inner">
+    <div class="section-inner layout-dashboard">
       <div class="section-head reveal">
         <span class="section-eyebrow">02 — Données</span>
         <h2 class="section-title">Dashboard<br>Performances</h2>
-        <p class="section-lede">Analyse des performances d'un·e athlète olympique sous forme de tableau de bord filtrable.</p>
-      </div>
-      <div class="section-body reveal">
-        <div class="preview-card">
-          <div class="preview-image-wrapper">
-            <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=800&q=80" alt="Athlète sur des starting blocks de course" class="preview-img">
-            <span class="preview-tag">Data Viz</span>
+        <p class="section-lede">Analyse dynamique des performances élites en natation (Saison 2024), illustrant les pics de vitesse absolus.</p>
+        
+        <div class="trend-card">
+          <h4>Tendance globale</h4>
+          <p>Amélioration constante, pic de forme aux JO</p>
+        </div>
+        
+        <div class="filter-group">
+          <label for="filter-epreuve" class="filter-label">Filtrer par épreuve :</label>
+          <div class="select-wrapper">
+            <select id="filter-epreuve">
+              <option value="all">Toutes les épreuves</option>
+              <option value="400m 4 nages">400m 4 nages</option>
+              <option value="200m 4 nages">200m 4 nages</option>
+              <option value="200m papillon">200m papillon</option>
+            </select>
           </div>
-          <div class="preview-content">
-            <h3>Graphiques et filtres d'analyses</h3>
-            <p>Un tableau de bord complet pour suivre l'évolution des records, filtrable par épreuve, compétition et période chronologique.</p>
+        </div>
+      </div>
+      
+      <div class="section-body reveal">
+        <div class="dashboard-grid">
+          <div class="chart-container">
+            <h3>Progression Chronologique (400m 4 nages)</h3>
+            <canvas id="perfChart"></canvas>
+          </div>
+          
+          <div class="table-wrapper">
+            <table class="perf-table" id="perf-table">
+              <thead>
+                <tr>
+                  <th>Compétition</th>
+                  <th>Épreuve</th>
+                  <th>Temps</th>
+                  <th>Rang</th>
+                  <th>Écart vs 2023 / Note</th>
+                </tr>
+              </thead>
+              <tbody id="table-body">
+                </tbody>
+            </table>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ SECTION 03 — HÉRITAGE ============ -->
   <section class="project-section section--heritage" id="heritage">
     <span class="section-stripe" aria-hidden="true"></span>
-    <div class="section-inner">
+    <div class="section-inner full-width-layout">
       <div class="section-head reveal">
         <span class="section-eyebrow">03 — Récit</span>
-        <h2 class="section-title">Héritage<br>Olympique</h2>
-        <p class="section-lede">L'héritage des Jeux vu par un·e habitant·e — récit immersif en scrollytelling.</p>
+        <h2 class="section-title">Héritage Olympique</h2>
+        <p class="section-lede">L'impact social et territorial des infrastructures analysé à hauteur d'habitant.</p>
       </div>
-      <div class="section-body reveal">
-        <div class="preview-card">
-          <div class="preview-image-wrapper">
-            <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=800&q=80" alt="Vue aérienne de Paris et de la Tour Eiffel" class="preview-img">
-            <span class="preview-tag">Scrollytelling</span>
+      
+      <div class="scrolly-container">
+        <div class="scrolly-story">
+          <div class="story-step reveal" data-step="1">
+            <p class="testimony-meta">Yacine, 32 ans, habitant de Saint-Denis :</p>
+            <blockquote>"Je m'appelle Yacine, j'ai 32 ans, je vis à Saint-Denis, pas loin du Stade de France. Quand les Jeux Olympiques ont été annoncés à Paris, j'étais sceptique. On parlait d'emplois, de rénovation, mais ici, on a souvent vu les grands projets passer sans qu'ils nous concernent vraiment. Et pourtant, depuis 2024, je dois reconnaître que le visage du quartier a changé."</blockquote>
           </div>
-          <div class="preview-content">
-            <h3>Changements urbains et témoignages</h3>
-            <p>Une immersion cartographique au cœur des territoires transformés, illustrée par des comparatifs avant/après et des récits de vie locaux.</p>
+          
+          <div class="story-step reveal" data-step="2">
+            <h3>Des transports accélérés</h3>
+            <blockquote>"D'abord, il y a les transports. La nouvelle ligne 16 du métro, dont une partie a ouvert entre Saint-Denis Pleyel et Clichy-Montfermeil, a vraiment facilité les déplacements. Avant, pour aller bosser à Noisy-le-Sec, je mettais plus d'une heure. Maintenant, en trente minutes, j'y suis."</blockquote>
+            <div class="travel-comparison">
+              <div class="travel-box before">
+                <span class="t-label">Avant</span>
+                <span class="t-time">1h00+</span>
+              </div>
+              <div class="travel-arrow">➔</div>
+              <div class="travel-box after">
+                <span class="t-label">Maintenant</span>
+                <span class="t-time">30 min</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="story-step reveal" data-step="3">
+            <h3>La mutation du Village des Athlètes</h3>
+            <blockquote>"Le village des athlètes, c'est devenu un vrai quartier. Des logements sociaux, des résidences étudiantes, un grand parc public. Les enfants jouent dans les anciens espaces d'entraînement transformés en gymnases municipaux."</blockquote>
+          </div>
+          
+          <div class="story-step reveal" data-step="4">
+            <h3>L'insertion par l'emploi réel</h3>
+            <blockquote>"Côté emploi, plusieurs de mes amis ont bossé sur les chantiers avant les Jeux, grâce aux clauses d'insertion de la Solideo. Certains ont décroché un CDI après coup."</blockquote>
+          </div>
+          
+          <div class="story-step alert-step reveal" data-step="5">
+            <h3>Et les zones d'ombre ?</h3>
+            <blockquote>"Après, tout n'est pas parfait. Les loyers ont augmenté, surtout à Saint-Ouen et à La Plaine. Beaucoup ont peur que le département perde son âme, avec la gentrification. Mais malgré tout, quand je passe devant le Stade de France et que je repense à l'été 2024, je ressens de la fierté."</blockquote>
+          </div>
+        </div>
+
+        <div class="scrolly-sidebar">
+          <div class="sticky-stats">
+            <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=600&q=80" alt="Paris Seine Stade de France" class="sidebar-img">
+            <div class="stat-item">
+              <span class="stat-number" data-target="25">0</span>
+              <span class="stat-label">Chantiers d'envergure livrés</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number" data-target="2800">0</span>
+              <span class="stat-label">Logements durables créés</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number" data-target="2000">0</span>
+              <span class="stat-label">Emplois d'insertion activés</span>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ SECTION 04 — INNOVATIONS ============ -->
   <section class="project-section section--innovations" id="innovations">
     <span class="section-stripe" aria-hidden="true"></span>
-    <div class="section-inner">
+    <div class="section-inner full-width-layout">
       <div class="section-head reveal">
         <span class="section-eyebrow">04 — Technologie</span>
-        <h2 class="section-title">Innovations<br>Technologiques</h2>
-        <p class="section-lede">Le rapport sur les innovations technologiques des JO, transformé en page interactive et filtrable.</p>
+        <h2 class="section-title">Innovations Technologiques</h2>
+        <p class="section-lede">Matrice d'évaluation technologique : filtrez les innovations clés et explorez leur viabilité opérationnelle.</p>
+        
+        <div class="filter-buttons" id="inno-filters">
+          <button class="filter-btn active" data-filter="all">Tout</button>
+          <button class="filter-btn" data-filter="Sport">Sport</button>
+          <button class="filter-btn" data-filter="Sécurité">Sécurité</button>
+          <button class="filter-btn" data-filter="Spectateurs">Spectateurs</button>
+          <button class="filter-btn" data-filter="Médias">Médias</button>
+          <button class="filter-btn" data-filter="Durabilité">Durabilité</button>
+        </div>
       </div>
+      
       <div class="section-body reveal">
-        <div class="preview-card">
-          <div class="preview-image-wrapper">
-            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80" alt="Composants technologiques et circuits imprimés" class="preview-img">
-            <span class="preview-tag">Tech & Trends</span>
+        <div class="inno-layout">
+          <div class="inno-grid" id="inno-grid">
+            </div>
+          
+          <div class="inno-details-panel" id="inno-details-panel">
+            <div class="panel-placeholder" id="panel-placeholder">
+              <p>Cliquez sur une carte d'innovation pour analyser ses indicateurs d'impact et son scénario de déploiement.</p>
+            </div>
+            <div class="panel-content hidden" id="panel-content">
+              <span class="panel-domain" id="p-domain">Domaine</span>
+              <h3 id="p-title">Titre Innovation</h3>
+              
+              <div class="jauges-container">
+                <div class="jauge-item">
+                  <div class="jauge-label">Efficacité opérationnelle : <span id="val-efficacite">Élevée</span></div>
+                  <div class="jauge-bar-rail"><div class="jauge-bar-fill" id="bar-efficacite"></div></div>
+                </div>
+                <div class="jauge-item">
+                  <div class="jauge-label">Acceptabilité sociétale : <span id="val-acceptabilite">Haute</span></div>
+                  <div class="jauge-bar-rail"><div class="jauge-bar-fill" id="bar-acceptabilite"></div></div>
+                </div>
+                <div class="jauge-item">
+                  <div class="jauge-label">Pérennité structurelle : <span id="val-perennite">Forte</span></div>
+                  <div class="jauge-bar-rail"><div class="jauge-bar-fill" id="bar-perennite"></div></div>
+                </div>
+              </div>
+              
+              <div class="scenario-box">
+                <h5>Scénario technologique dominant</h5>
+                <p id="p-scenario">Adoption globale rapide au sein de l'industrie sportive.</p>
+              </div>
+            </div>
           </div>
-          <div class="preview-content">
-            <h3>Analyse d'impact et radar charts</h3>
-            <p>Découvrez les technologies clés déployées durant l'événement à travers des grilles multicritères et des jauges d'impact sociétal.</p>
+        </div>
+        
+        <div class="recommendations-banner">
+          <h3>⚡ Recommandations stratégiques clés</h3>
+          <div class="rec-grid">
+            <div class="rec-item">
+              <span class="rec-num">1</span>
+              <p>Standardiser à grande échelle l'IA d'analyse de performance et le maillage des capteurs IoT environnementaux.</p>
+            </div>
+            <div class="rec-item">
+              <span class="rec-num">2</span>
+              <p>Réguler l'usage de la sécurité intelligente et des caméras algorithmiques pour préserver le droit à la vie privée.</p>
+            </div>
+            <div class="rec-item">
+              <span class="rec-num">3</span>
+              <p>Tester rigoureusement les architectures VR/AR et les flottes de robots via des projets pilotes ciblés avant généralisation.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -181,20 +400,19 @@
 
 </main>
 
-<!-- ============ FOOTER ============ -->
 <footer class="site-footer" id="footer">
   <div class="footer-inner">
     <div class="footer-brand">
       <span class="logo-mark logo-mark--footer">24</span>
-      <p>Projet supervisé B2 — Vibe Coding x JO Paris 2024<br>Réalisé avec un assistant IA, du prompt au déploiement.</p>
+      <p>Projet supervisé B2 — Vibe Coding x JO Paris 2024<br>Réalisé avec un assistant IA, du prompt au déploiement de l'interface.</p>
     </div>
     <div class="footer-team">
       <span class="footer-team-label">Équipe projet</span>
       <ul class="footer-team-list">
-        <li>Neven CALCINA</li>
-        <li>Fany MARCK</li>
-        <li>Luna LEMAIRE</li>
-        <li>Noah PAGES</li>
+        <li>Groupe 4 de Projet Digital</li>
+        <li>Concepteur d'Applications</li>
+        <li>UX Designer Référent</li>
+        <li>Data Intégrateur</li>
       </ul>
     </div>
   </div>
